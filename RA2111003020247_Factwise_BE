@@ -1,0 +1,11 @@
+def maxScore(cardPoints,k):
+n=len(cardPoints)
+total_sum=sum(cardPoints)
+if k == n:
+return total_sum
+min_subarray_sum=sum(cardPoints[:n-k])
+current_sum=min_subarray_sum
+for i i range (1,k+1):
+current_sum=current_sum-cardPoints[i-1]+cardPoints[n-k+i-1]
+min_subarray_sum=min(min_subarray_sum,current_sum)
+return total_sum-min
